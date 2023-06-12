@@ -1,0 +1,31 @@
+{
+  "apps": [
+    {
+      "name": "ps_django",
+      "script": "manage.py",
+      "args": [
+        "runserver",
+        "0.0.0.0:8000"
+      ],
+      "exec_mode": "fork",
+      "instances": "1",
+      "wait_ready": true,
+      "autorestart": true,
+      "max_restarts": 9999,
+      "interpreter": "venv/bin/python3"
+    },
+    {
+      "name": "parser",
+      "script": "manage.py",
+      "args": [
+        "parser_db"
+      ],
+      "exec_mode": "fork",
+      "instances": "1",
+      "wait_ready": true,
+      "autorestart": true,
+      "max_restarts": 9999,
+      "interpreter": "venv/bin/python3"
+    }
+  ]
+}
